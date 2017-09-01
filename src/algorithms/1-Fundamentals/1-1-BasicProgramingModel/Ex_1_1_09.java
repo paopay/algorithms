@@ -1,3 +1,6 @@
+//Write a code fragment that puts the binary representation 
+//of a positive integer N into a String s.
+
 public class Ex_1_1_09 {
   public static void main(String[] args) {
     int N = 322;
