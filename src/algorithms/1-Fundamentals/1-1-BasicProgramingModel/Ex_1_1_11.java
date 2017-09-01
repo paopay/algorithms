@@ -12,8 +12,8 @@ public class Ex_1_1_11 {
         {false, false}
     };
     
-    for (int i = 0; i<arr[0].length; i++) {
-      for (int j = 0; j<arr.length; j++){
+    for (int i = 0; i<arr.length; i++) {
+      for (int j = 0; j<arr[0].length; j++){
         System.out.println("row " + i + " - column " + j);
         if (arr[i][j]) {
           System.out.println('*');
