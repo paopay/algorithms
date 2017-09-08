@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/1-Fundamentals/1-1-BasicProgramingModel"/>
-	<classpathentry kind="src" path="1-2-DataAbstraction"/>
+	<classpathentry kind="src" path="src/1-Fundamentals/1-2-DataAbstraction"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/paolopayumo/Downloads/algs4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
