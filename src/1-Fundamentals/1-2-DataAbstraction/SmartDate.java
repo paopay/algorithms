@@ -22,6 +22,13 @@ public class SmartDate {
     return year;
   }
   
+  public int dayOfTheWeek() {
+    int m = (month + 9) % 12;
+    int y = year - m/10;
+    
+    return (365*y + y/4 - y/100 + y/400 + (m*306 +5)/10 + (day + 2)) % 7;
+  }
+  
   public String toString() {
     return month() + "/" + day() + "/" + year();
   }
@@ -33,6 +40,7 @@ public class SmartDate {
 
     SmartDate date = new SmartDate(m, d, y);
     System.out.println(date);
+    System.out.println(date.dayOfTheWeek());
   }
 
 }
