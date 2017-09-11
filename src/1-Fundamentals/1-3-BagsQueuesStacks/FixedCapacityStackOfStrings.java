@@ -9,7 +9,7 @@ public class FixedCapacityStackOfStrings {
   }
 
   public boolean isFull() {
-    return N == (cap-1);
+    return N == (a.length - 1);
   }
   
   public boolean isEmpty() {
