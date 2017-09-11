@@ -9,7 +9,7 @@ public class FixedCapacityStackOfStrings {
   }
 
   public boolean isFull() {
-    return N == (a.length - 1);
+    return N == a.length;
   }
   
   public boolean isEmpty() {
@@ -30,9 +30,14 @@ public class FixedCapacityStackOfStrings {
   
   public static void main(String[] args) {
     FixedCapacityStackOfStrings s;
-    s = new FixedCapacityStackOfStrings(1);
+    s = new FixedCapacityStackOfStrings(2);
     
     s.push("one");
+    System.out.println(s.size());
+    System.out.println(s.isFull());
+    
+    s.push("two");
+    System.out.println(s.size());
     System.out.println(s.isFull());
   }
 }
