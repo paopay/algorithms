@@ -28,7 +28,14 @@ public class Steque<Item> {
   }
   
   public void push(Item item) {
+    Node oldFirst = first;
+    first = new Node();
+    first.item = item;
+    first.next = oldFirst;
     
+    if (last == null) {
+      last = first;
+    }
   }
   
   public boolean isEmpty() {
@@ -54,7 +61,10 @@ public class Steque<Item> {
     steque.enqueue(3);
     System.out.println(steque.first.next.item);
     
+    steque.push(1);
+    System.out.println(steque.first.item);
+    System.out.println(steque.first.next.item);
     
-   
+    System.out.println(steque.pop());
   }
 }
