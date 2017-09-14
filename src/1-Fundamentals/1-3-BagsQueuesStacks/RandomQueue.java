@@ -68,7 +68,15 @@ public class RandomQueue<Item> {
   }
   
   public Item sample() { //return a random item without removing
+    int index;
     
+    if (N == 1) {
+      index = 0;
+    } else {
+      index = ThreadLocalRandom.current().nextInt(0, N-1);
+    }
+    
+    return items[index];
   }
   
   public static void main(String[] args) {
@@ -76,7 +84,8 @@ public class RandomQueue<Item> {
     for (int i = 1; i <= 52; i++) {
       deck.enqueue(i);
     }
-    System.out.println(deck.size());
+    System.out.println(deck.sample());
+    System.out.println(deck.size()); 
     
     int[] player1 = new int[13];
     int[] player2 = new int[13];
