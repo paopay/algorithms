@@ -10,6 +10,7 @@ public class QuickFindUF {
   // initialize union-find data structure with
   // N objects (0 to N – 1)
   public QuickFindUF (int N) {
+    count = N;
     id = new int[N];
     for(int i = 0; i < N; i++) {
       id[i] = i;
@@ -58,7 +59,7 @@ public class QuickFindUF {
       System.out.println(p + " " + q); // and print connection.
     }
     
-    System.out.println(N + uf.count() + " components");
+    System.out.println(N - uf.count() + " components");
   }
 
 }
