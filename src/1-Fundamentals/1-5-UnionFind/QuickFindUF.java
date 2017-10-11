@@ -28,6 +28,7 @@ public class QuickFindUF {
         id[i] = qid;
       }
     }
+    count--;
   }
 
   //  are p and q in the same component?
@@ -46,6 +47,7 @@ public class QuickFindUF {
 
   public static void main(String[] args) {
     int N = StdIn.readInt(); // Read number of sites.
+    System.out.println(N);
     QuickFindUF uf = new QuickFindUF(N); // Initialize N components.
     
     while (!StdIn.isEmpty()) {
@@ -56,8 +58,7 @@ public class QuickFindUF {
       System.out.println(p + " " + q); // and print connection.
     }
     
-    System.out.println(uf.count() + " components");
-
+    System.out.println(N + uf.count() + " components");
   }
 
 }
