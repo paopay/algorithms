@@ -6,17 +6,26 @@ import edu.princeton.cs.algs4.In;
 public class Ex_2_1_11 {
 
   public static void sort(Comparable[] a) {
-    int N = a.length;
-    int h = 1;
-    while (h < N/3) { h = 3*h + 1; } // 1, 4, 13, 40, 121, 364, 1093, ...
-    while (h >= 1) { // h-sort the array.
-      for (int i = h; i < N; i++) { 
+    int N   = a.length;
+    int[] h = new int[N/3];
+    
+    for(int i = 0; i < h.length; i++) {
+      if(i == 0) { 
+        h[i] = 1;
+        continue;
+      }
+      
+      h[i] = 3 * h[i-1] + 1; // 1, 4, 13, 40, 121, 364, 1093, ...
+    }
+    
+    
+    for(int k = h.length - 1; k >= 0; k--) { // h-sort the array.
+      for (int i = h[k]; i < N; i++) { 
         // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h]... .
-        for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
-          exch(a, j, j-h);
+        for (int j = i; j >= h[k] && less(a[j], a[j-h[k]]); j -= h[k]) {
+          exch(a, j, j-h[k]);
         }
       }
-      h = h/3;
     } 
   }
   
