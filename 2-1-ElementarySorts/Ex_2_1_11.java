@@ -6,7 +6,18 @@ import edu.princeton.cs.algs4.In;
 public class Ex_2_1_11 {
 
   public static void sort(Comparable[] a) {
-    
+    int N = a.length;
+    int h = 1;
+    while (h < N/3) { h = 3*h + 1; } // 1, 4, 13, 40, 121, 364, 1093, ...
+    while (h >= 1) { // h-sort the array.
+      for (int i = h; i < N; i++) { 
+        // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h]... .
+        for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+          exch(a, j, j-h);
+        }
+      }
+      h = h/3;
+    } 
   }
   
   private static boolean less(Comparable v, Comparable w) {
@@ -20,7 +31,7 @@ public class Ex_2_1_11 {
   private static void show(Comparable[] a) { 
     // Print the array, on a single line.
     for (int i = 0; i < a.length; i++) {
-      System.out.println(a[i] + " ");
+      System.out.print(a[i] + " ");
     }
     
     System.out.println();
@@ -37,7 +48,7 @@ public class Ex_2_1_11 {
 
   public static void main(String[] args) { 
     // Read strings from standard input, sort them, and print.
-    String[] a = In.readStrings();
+    String[] a = In.readStrings(args[0]);
     sort(a);
     assert isSorted(a);
     show(a);
