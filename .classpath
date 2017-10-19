@@ -5,6 +5,8 @@
 	<classpathentry kind="src" path="src/1-Fundamentals/1-3-BagsQueuesStacks"/>
 	<classpathentry kind="src" path="src/1-Fundamentals/1-4-AnalysisOfAlgorithms"/>
 	<classpathentry kind="src" path="src/1-Fundamentals/1-5-UnionFind"/>
+	<classpathentry kind="src" path="src/2-Sorting/2-1-ElementarySorts"/>
+	<classpathentry kind="src" path="2-1-ElementarySorts"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/Users/Paolo/Desktop/algorithms/algs4.jar"/>
 	<classpathentry kind="output" path="bin"/>
